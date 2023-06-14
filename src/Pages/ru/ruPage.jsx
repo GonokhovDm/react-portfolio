@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './ruPage.scss'
 import './media.scss'
@@ -40,15 +41,17 @@ function RuPage( {language, setLanguage} ) {
             <div className="navbar__menu-items">
               <ul>
                 <li><a href="/">Главная</a></li>
-                <li><a href="/">О себе</a></li>
-                <li><a href="/">Проекты</a></li>
+                <li><a href="/" data-goto=".about">О себе</a></li>
+                <li><a href="/" data-goto="portfolio">Проекты</a></li>
                 <li><a href="/">Контакты</a></li>
               </ul>
             </div>
             <div className="navbar__menu-language">
               <ul>
-                <li className={`navbar__language-ru ${language === 'ru' ? 'active' : ''}`} onClick={() => {setLanguage('ru'); console.log(language)}}>RU</li>
-                <li className={`navbar__language-en ${language === 'en' ? 'active' : ''}`} onClick={() => {setLanguage('en'); console.log(language)}}>EN</li>
+                {/* <li className={`navbar__language-ru ${language === 'ru' ? 'active' : ''}`} onClick={() => {setLanguage('ru'); console.log(language)}}>RU</li> */}
+                {/* <li className={`navbar__language-en ${language === 'en' ? 'active' : ''}`} onClick={() => {setLanguage('en'); console.log(language)}}>EN</li> */}
+                <li><Link to={'/'}>ru</Link></li>
+                <li><Link to={'en'}>en</Link></li>
               </ul>
             </div>
           </div>
