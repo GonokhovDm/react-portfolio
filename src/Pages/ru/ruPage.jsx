@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
 import './ruPage.scss'
+import './media.scss'
 
-import gdLogoImg from '../../img/GDlogo.jpg';
+import gdLogoSvg from '../../img/svg/GDlogo.svg';
+import gdLogoWhiteSvg from '../../img/svg/GDlogo_white.svg';
 import myPhoto from '../../img/myPhoto.jpg';
 import gitSvg from '../../img/svg/github.svg';
 import vkSvg from '../../img/svg/vk.svg';
@@ -19,6 +21,7 @@ function RuPage( {language, setLanguage} ) {
 
   const [burgerIsClicked, setBurgerIsClicked] = useState(false);
   const [mobileMenuIsVisible, setMobileMenuIsVisible] = useState(false);
+  const [titleShadow, setTitleShadow] = useState(false);
 
   const onClickBurger = () => {
     setBurgerIsClicked(!burgerIsClicked);
@@ -30,7 +33,7 @@ function RuPage( {language, setLanguage} ) {
       <nav className="navbar">
         <div className="container">
           <a href="/" className='navbar__logo'>
-            <img src={gdLogoImg} alt="logo" />
+            <img src={gdLogoSvg} alt="logo" />
           </a>
           <div className={`navbar__burger-btn ${burgerIsClicked ? 'active' : ''}`} onClick={onClickBurger}> <span /> </div>
           <div className={`navbar__menu ${burgerIsClicked ? 'active' : ''}`}>
@@ -44,8 +47,8 @@ function RuPage( {language, setLanguage} ) {
             </div>
             <div className="navbar__menu-language">
               <ul>
-                <li className={`navbar__language-ru ${language === 'ru' ? 'active' : ''}`}>RU</li>
-                <li className={`navbar__language-en ${language === 'en' ? 'active' : ''}`}>EN</li>
+                <li className={`navbar__language-ru ${language === 'ru' ? 'active' : ''}`} onClick={() => {setLanguage('ru'); console.log(language)}}>RU</li>
+                <li className={`navbar__language-en ${language === 'en' ? 'active' : ''}`} onClick={() => {setLanguage('en'); console.log(language)}}>EN</li>
               </ul>
             </div>
           </div>
@@ -57,7 +60,7 @@ function RuPage( {language, setLanguage} ) {
             <div className='col-lg-8 col-md-10 col-sm-12'>
               <div className="home__content">
                 <div className="home__content-text">
-                  <h1>Front-End React Developer</h1>
+                  <h1 className={`${titleShadow ? 'shadow-visible' : 'shadow-hiden'}`} onMouseEnter={() => {setTitleShadow(true)}} onMouseLeave={() => {setTitleShadow(false)}}>Front-End React Developer</h1>
                   <p>Привет! Меня зовут Гонохов Дмитрий. Живу и работаю в городе Новосибирск. Я только начинаю свой путь в разработку, и не планирую останавливаться.</p>
                   <ul className='home__content-links'>
                     <li>
@@ -197,17 +200,19 @@ function RuPage( {language, setLanguage} ) {
           <div className="row">
             <div>
               <div className="col-12"><h2>Всегда готов к Вашим предложениям!</h2></div>
-              <div className="col-12">
-                <div className="contacts__items">
-                  <div className="contacts__items-mail">
-                    <img src={mailSvg} alt="mail" />
-                    gonokhov.dm@gmail.com
-                  </div>
-                  <div className="contacts__items-phone">
-                    <img src={phoneSvg} alt="phone" />
-                    +7(906)909-12-21
-                  </div>
+              <div className="contacts__items">
+              <div className="col-12 col-lg-6 col-md-12">
+                <div className="contacts__items-mail">
+                  <img src={mailSvg} alt="mail" />
+                  gonokhov.dm@gmail.com
                 </div>
+              </div>
+              <div className="col-12 col-lg-6 col-md-12">
+                <div className="contacts__items-phone">
+                  <img src={phoneSvg} alt="phone" />
+                  +7(906)909-12-21
+                </div>
+              </div> 
               </div>
             </div>
           </div>
@@ -218,7 +223,7 @@ function RuPage( {language, setLanguage} ) {
           <div className="footer">
             <div className="footer__left">
               <a href="/">
-                <img src={gdLogoImg} alt="logo" />
+                <img src={gdLogoWhiteSvg} alt="logo" />
               </a>
               <span>Copyright@2023</span>
             </div>

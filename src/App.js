@@ -13,9 +13,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-				<Route path="/" element={<RuPage language={language} setLanguage={setLanguage}/>} />
-        <Route path="en" element={<EnPage language={language} setLanguage={setLanguage} />} />
-				<Route path="*" element={<NotFoundPage />} />
+				{/* <Route path="/" element={<RuPage language={language} setLanguage={setLanguage}/>} />
+        <Route path="en" element={<EnPage language={language} setLanguage={setLanguage} />} /> */}
+				{language === 'ru' && <Route path="/" element={<RuPage language={language} setLanguage={setLanguage}/>} />}
+        {language === 'en' && <Route path="/" element={<EnPage language={language} setLanguage={setLanguage} />} />}
+        <Route path="*" element={<NotFoundPage />} />
 			</Routes>
     </div>
   );
