@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './ruPage.scss'
 
@@ -16,6 +16,15 @@ import mailSvg from '../../img/svg/mail.svg';
 import phoneSvg from '../../img/svg/phone.svg';
 
 function RuPage( {language, setLanguage} ) {
+
+  const [burgerIsClicked, setBurgerIsClicked] = useState(false);
+  const [mobileMenuIsVisible, setMobileMenuIsVisible] = useState(false);
+
+  const onClickBurger = () => {
+    setBurgerIsClicked(!burgerIsClicked);
+    setMobileMenuIsVisible(!mobileMenuIsVisible);
+  }
+
   return (
     <div className="app">
       <nav className="navbar">
@@ -23,7 +32,8 @@ function RuPage( {language, setLanguage} ) {
           <a href="/" className='navbar__logo'>
             <img src={gdLogoImg} alt="logo" />
           </a>
-          <div className="navbar__menu">
+          <div className={`navbar__burger-btn ${burgerIsClicked ? 'active' : ''}`} onClick={onClickBurger}> <span /> </div>
+          <div className={`navbar__menu ${burgerIsClicked ? 'active' : ''}`}>
             <div className="navbar__menu-items">
               <ul>
                 <li><a href="/">Главная</a></li>
@@ -48,7 +58,7 @@ function RuPage( {language, setLanguage} ) {
               <div className="home__content">
                 <div className="home__content-text">
                   <h1>Front-End React Developer</h1>
-                  <p>Привет! Меня зовут Гонохов Дмитрий. Живу и работаю в городе Новосибирск. <br/> Я только начинаю свой путь в разработку, и не планирую останавливаться.</p>
+                  <p>Привет! Меня зовут Гонохов Дмитрий. Живу и работаю в городе Новосибирск. Я только начинаю свой путь в разработку, и не планирую останавливаться.</p>
                   <ul className='home__content-links'>
                     <li>
                       <a href="https://github.com/GonokhovDm">
