@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './ruPage.scss'
 import './media.scss'
 
+import ProjectItems from '../../Components/ProjectItems/ProjectItems';
+
 import gdLogoSvg from '../../img/svg/GDlogo.svg';
 import gdLogoWhiteSvg from '../../img/svg/GDlogo_white.svg';
 import myPhoto from '../../img/myPhoto.jpg';
@@ -14,11 +16,23 @@ import cssSvg from '../../img/svg/css.svg';
 import jsSvg from '../../img/svg/js.svg';
 import reactSvg from '../../img/svg/react.svg';
 import scssSvg from '../../img/svg/scss.svg';
-import linkSvg from '../../img/svg/link.svg';
 import mailSvg from '../../img/svg/mail.svg';
 import phoneSvg from '../../img/svg/phone.svg';
 
 function RuPage( {language, setLanguage} ) {
+
+  const projectItemsArr = [
+    {
+      imgName: 'screen-1.jpg',
+      description: 'Одностраничный сайт музыкальной группы с расписанием гастролей и воспроизведением треков одного из альбомов.',
+      stack: ['HTML', 'SCSS', 'JavaScript']
+    },
+    {
+      imgName: 'screen-2.jpg',
+      description: 'Многостраничный сайт, с информацией о проведении конференций на различные темы. Включает в себя расписание конференций, информацию о спикерах. ценах и блог.',
+      stack: ['HTML', 'SCSS', 'JSX', 'React', 'React-Router']
+    }
+  ]
 
   const [burgerIsClicked, setBurgerIsClicked] = useState(false);
   const [mobileMenuIsVisible, setMobileMenuIsVisible] = useState(false);
@@ -42,7 +56,7 @@ function RuPage( {language, setLanguage} ) {
               <ul>
                 <li><a href="/">Главная</a></li>
                 <li><a href="/" data-goto=".about">О себе</a></li>
-                <li><a href="/" data-goto="portfolio">Проекты</a></li>
+                <li><a href="/" data-goto=".portfolio">Проекты</a></li>
                 <li><a href="/">Контакты</a></li>
               </ul>
             </div>
@@ -136,7 +150,8 @@ function RuPage( {language, setLanguage} ) {
       <section className='portfolio'>
         <div className="container">
           <h2>Портфолио</h2>
-          <div className="row">
+          <ProjectItems projectItemsArr={projectItemsArr}/>  
+          {/* <div className="row">
             <div className="col-lg-4">
               <img className='portfolio__screen' src={require('../../img/screen-1.jpg')} alt="" />
             </div>
@@ -195,7 +210,7 @@ function RuPage( {language, setLanguage} ) {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className="contacts">

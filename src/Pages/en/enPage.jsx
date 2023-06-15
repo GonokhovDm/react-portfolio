@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import ProjectItems from '../../Components/ProjectItems/ProjectItems';
 
 import '../ru/ruPage.scss'
 import '../ru/media.scss'
@@ -13,11 +16,23 @@ import cssSvg from '../../img/svg/css.svg';
 import jsSvg from '../../img/svg/js.svg';
 import reactSvg from '../../img/svg/react.svg';
 import scssSvg from '../../img/svg/scss.svg';
-import linkSvg from '../../img/svg/link.svg';
 import mailSvg from '../../img/svg/mail.svg';
 import phoneSvg from '../../img/svg/phone.svg';
 
 function EnPage( {language, setLanguage} ) {
+
+  const projectItemsArr = [
+    {
+      imgName: 'screen-1.jpg',
+      description: 'A single-page website for a musical group with a tour schedule and playback of tracks from one of the albums.',
+      stack: ['HTML', 'SCSS', 'JavaScript']
+    },
+    {
+      imgName: 'screen-2.jpg',
+      description: 'A multi-page website with information about various conferences on various topics. Includes conference, information about speakers, prices and blog.',
+      stack: ['HTML', 'SCSS', 'JSX', 'React', 'React-Router']
+    }
+  ]
 
   const [burgerIsClicked, setBurgerIsClicked] = useState(false);
   const [mobileMenuIsVisible, setMobileMenuIsVisible] = useState(false);
@@ -47,8 +62,10 @@ function EnPage( {language, setLanguage} ) {
             </div>
             <div className="navbar__menu-language">
               <ul>
-                <li className={`navbar__language-ru ${language === 'ru' ? 'active' : ''}`} onClick={() => {setLanguage('ru'); console.log(language)}}>RU</li>
-                <li className={`navbar__language-en ${language === 'en' ? 'active' : ''}`} onClick={() => {setLanguage('en'); console.log(language)}}>EN</li>
+                {/* <li className={`navbar__language-ru ${language === 'ru' ? 'active' : ''}`} onClick={() => {setLanguage('ru'); console.log(language)}}>RU</li>
+                <li className={`navbar__language-en ${language === 'en' ? 'active' : ''}`} onClick={() => {setLanguage('en'); console.log(language)}}>EN</li> */}
+                <li><Link to={'/'}>ru</Link></li>
+                <li><Link to={'en'}>en</Link></li>
               </ul>
             </div>
           </div>
@@ -133,66 +150,7 @@ function EnPage( {language, setLanguage} ) {
       <section className='portfolio'>
         <div className="container">
           <h2>Portfolio</h2>
-          <div className="row">
-            <div className="col-lg-4">
-              <img className='portfolio__screen' src={require('../../img/screen-1.jpg')} alt="" />
-            </div>
-            <div className="col-lg-8">
-              <div className="portfolio__descr">
-                <p>A single-page website for a musical group with a tour schedule and playback of tracks from one of the albums.</p>
-                <ul className='portfolio__stack'>
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>JavaScript</li>
-                </ul>
-                <ul className="portfolio__links">
-                  <li>
-                    <a href="https://github.com/GonokhovDm/Mosiqua">
-                      Code
-                      <img src={gitSvg} alt="git" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://mosiqua-deploy.vercel.app/">
-                      Preview
-                      <img src={linkSvg} alt="link" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-4">
-              <img className='portfolio__screen' src={require('../../img/screen-2.jpg')} alt="" />
-            </div>
-            <div className="col-lg-8">
-              <div className="portfolio__descr">
-                <p>A multi-page website with information about various conferences on various topics. Includes conference, information about speakers, prices and blog.</p>
-                <ul className='portfolio__stack'>
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>JSX</li>
-                  <li>React</li>
-                  <li>React-Router</li>
-                </ul>
-                <ul className="portfolio__links">
-                  <li>
-                    <a href="https://github.com/GonokhovDm/react-confer">
-                      Code
-                      <img src={gitSvg} alt="git" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://gonokhovdm.github.io/react-confer/">
-                      Preview
-                      <img src={linkSvg} alt="link" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <ProjectItems projectItemsArr={projectItemsArr}/>
         </div>
       </section>
       <section className="contacts">
