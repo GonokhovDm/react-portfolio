@@ -25,12 +25,30 @@ function EnPage( {language, setLanguage} ) {
     {
       imgName: 'screen-1.jpg',
       description: 'A single-page website for a musical group with a tour schedule and playback of tracks from one of the albums.',
-      stack: ['HTML', 'SCSS', 'JavaScript']
+      stack: ['HTML', 'SCSS', 'JavaScript'],
+      codeLink: 'https://github.com/GonokhovDm/Mosiqua',
+      viewLink: 'mosiqua-deploy.vercel.app'
     },
     {
       imgName: 'screen-2.jpg',
       description: 'A multi-page website with information about various conferences on various topics. Includes conference, information about speakers, prices and blog.',
-      stack: ['HTML', 'SCSS', 'JSX', 'React', 'React-Router']
+      stack: ['HTML', 'SCSS', 'JSX', 'React', 'React-Router'],
+      codeLink: 'https://github.com/GonokhovDm/react-confer',
+      viewLink: 'https://gonokhovdm.github.io/react-confer/'
+    },
+    {
+      imgName: 'screen-3.jpg',
+      description: 'SPA for searching employees and displaying information about each of them.',
+      stack: ['HTML', 'SCSS', 'JSX', 'React', 'JSON'],
+      codeLink: 'https://github.com/GonokhovDm/react-jilfond',
+      viewLink: 'react-jilfond-vercel.vercel.app'
+    },
+    {
+      imgName: 'screen-4.jpg',
+      description: 'Classic snake game.',
+      stack: ['HTML', 'SCSS', 'JavaScript'],
+      codeLink: 'https://github.com/GonokhovDm/Snake_game_js',
+      viewLink: 'https://snake-vercel.vercel.app/'
     }
   ]
 

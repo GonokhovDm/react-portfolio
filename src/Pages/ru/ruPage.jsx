@@ -25,12 +25,30 @@ function RuPage( {language, setLanguage} ) {
     {
       imgName: 'screen-1.jpg',
       description: 'Одностраничный сайт музыкальной группы с расписанием гастролей и воспроизведением треков одного из альбомов.',
-      stack: ['HTML', 'SCSS', 'JavaScript']
+      stack: ['HTML', 'SCSS', 'JavaScript'],
+      codeLink: 'https://github.com/GonokhovDm/Mosiqua',
+      viewLink: 'https://mosiqua-deploy.vercel.app/'
     },
     {
       imgName: 'screen-2.jpg',
       description: 'Многостраничный сайт, с информацией о проведении конференций на различные темы. Включает в себя расписание конференций, информацию о спикерах. ценах и блог.',
-      stack: ['HTML', 'SCSS', 'JSX', 'React', 'React-Router']
+      stack: ['HTML', 'SCSS', 'JSX', 'React', 'React-Router'],
+      codeLink: 'https://github.com/GonokhovDm/react-confer',
+      viewLink: 'https://gonokhovdm.github.io/react-confer/'
+    },
+    {
+      imgName: 'screen-3.jpg',
+      description: 'Одностраничное приложение для поиска сотрудников и отображения информации о каждом из них.',
+      stack: ['HTML', 'SCSS', 'JSX', 'React', 'JSON'],
+      codeLink: 'https://github.com/GonokhovDm/react-jilfond',
+      viewLink: 'https://react-jilfond-vercel.vercel.app/'
+    },
+    {
+      imgName: 'screen-4.jpg',
+      description: 'Классическая игра змейка.',
+      stack: ['HTML', 'SCSS', 'JavaScript'],
+      codeLink: 'https://github.com/GonokhovDm/Snake_game_js',
+      viewLink: 'https://snake-vercel.vercel.app/'
     }
   ]
 

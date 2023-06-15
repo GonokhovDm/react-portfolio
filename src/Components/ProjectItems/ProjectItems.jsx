@@ -24,13 +24,13 @@ function ProjectItems({ projectItemsArr }) {
               </ul>
               <ul className="portfolio__links">
                 <li>
-                  <a href="https://github.com/GonokhovDm/Mosiqua">
+                  <a href={item.codeLink}>
                     Code
                     <img src={gitSvg} alt="git" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://mosiqua-deploy.vercel.app/">
+                  <a href={item.viewLink}>
                     Preview
                     <img src={linkSvg} alt="link" />
                   </a>
